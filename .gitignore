@@ -1,0 +1,63 @@
+# Environment variables and secrets (never commit API keys or tokens)
+.env
+.env.local
+.env.*.local
+*.env
+
+# Credentials
+*credentials*
+*secrets*
+*.key
+*.pem
+*.secret
+
+# Node.js
+node_modules/
+dist/
+build/
+*.tsbuildinfo
+.npm
+.yarn
+.pnpm-store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+coverage/
+.nyc_output/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+.venv/
+env/
+*.egg-info/
+.eggs/
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+htmlcov/
+.coverage
+.coverage.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Misc
+.cache
+*.local
+local-marketplace/

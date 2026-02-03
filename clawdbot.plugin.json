@@ -1,0 +1,11 @@
+{
+  "id": "trading212-api",
+  "description": "Skill for interacting with the Trading 212 API - portfolio management, order placement, position tracking, and historical data analysis",
+  "version": "1.0.0",
+  "skills": ["./plugins/trading212-api/skills"],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

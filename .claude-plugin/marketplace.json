@@ -1,0 +1,17 @@
+{
+  "name": "trading212-plugins",
+  "version": "1.0.0",
+  "description": " Supercharge your AI agent with the power of the Trading 212 API",
+  "owner": {
+    "name": "Trading 212",
+    "email": "support@trading212.com"
+  },
+  "plugins": [
+    {
+      "name": "trading212-api",
+      "source": "./plugins/trading212-api",
+      "description": "Adds skill to use Trading 212 API",
+      "category": "finance"
+    }
+  ]
+}

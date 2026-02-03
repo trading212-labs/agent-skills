@@ -1,0 +1,28 @@
+{
+  "name": "@trading212-labs/agent-skills",
+  "version": "1.0.0",
+  "description": "Clawdbot plugin for Trading 212 API skill - portfolio management, order placement, position tracking, and historical data",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trading212-labs/agent-skills.git"
+  },
+  "keywords": [
+    "clawdbot",
+    "clawdbot-plugin",
+    "trading212",
+    "trading",
+    "investing",
+    "api"
+  ],
+  "author": "Trading 212",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trading212-labs/agent-skills/issues"
+  },
+  "homepage": "https://github.com/trading212-labs/agent-skills#readme",
+  "clawdbot": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}
