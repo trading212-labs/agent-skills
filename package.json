@@ -7,10 +7,13 @@
     "url": "git+https://github.com/trading212-labs/agent-skills.git"
   },
   "keywords": [
+    "openclaw",
+    "openclaw-plugin",
     "clawdbot",
     "clawdbot-plugin",
     "trading212",
     "trading",
+    "finance",
     "investing",
     "api"
   ],
