@@ -42,7 +42,7 @@ clawdbot plugins install github:trading212-labs/agent-skills
 3. Click `Add Rule` on Rules section -> Add from Github
 4. Submit GitHub url: `https://github.com/trading212-labs/agent-skills.git`
 
-### OpenAI Codex
+### OpenAI Codex CLI
 
 ```bash
 $skill-installer https://github.com/trading212-labs/agent-skills/tree/master/plugins/trading212-api/skills/trading212-api
