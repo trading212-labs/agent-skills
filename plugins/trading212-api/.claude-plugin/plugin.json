@@ -2,5 +2,8 @@
   "name": "trading212-api",
   "description": "Skill for interacting with the Trading 212 API - portfolio management, order placement, position tracking, and historical data analysis",
   "version": "1.0.0",
-  "author": { "name": "Trading 212", "email": "support@trading212.com" }
+  "author": {
+    "name": "Trading 212",
+    "email": "support@trading212.com"
+  }
 }
