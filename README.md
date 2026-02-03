@@ -1,8 +1,8 @@
 # Trading 212 API Agent Skills
 
-[![Trading 212](https://img.shields.io/badge/Trading212-API-0066FF)](https://docs.trading212.com/api) [![Claude Code](https://img.shields.io/badge/Claude_Code-Plugin-8B5CF6)](https://claudemarketplaces.com) [![Moltbot](https://img.shields.io/badge/Moltbot-Plugin-10B981)](https://www.clawhub.ai) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintained](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/trading212-labs/agent-skills/graphs/commit-activity)
+[![Trading 212](https://img.shields.io/badge/Trading212-API-0066FF)](https://docs.trading212.com/api) [![Claude Code](https://img.shields.io/badge/Claude_Code-Plugin-8B5CF6)](https://claudemarketplaces.com) [![OpenClaw](https://img.shields.io/badge/OpenClaw-Plugin-10B981)](https://www.clawhub.ai) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintained](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/trading212-labs/agent-skills/graphs/commit-activity)
 
-An **AgentSkills** plugin that wraps the [Trading 212 API](https://docs.trading212.com/api) and exposes its capabilities in a **tool-friendly format** for AI assistants (e.g. [Moltbot](https://moltbot.com), [Claude Code](https://claude.com/product/claude-code), and others). The plugin provides skills that teach AI agents how to work with the API: retrieving portfolio and transaction history, placing and managing orders, querying instruments, and related operations—with **consistent, schema-based inputs and outputs**, **authentication and error mapping**, and **rate-limit handling**.
+An **AgentSkills** plugin that wraps the [Trading 212 API](https://docs.trading212.com/api) and exposes its capabilities in a **tool-friendly format** for AI assistants (e.g. [OpenClaw](https://moltbot.com), [Claude Code](https://claude.com/product/claude-code), and others). The plugin provides skills that teach AI agents how to work with the API: retrieving portfolio and transaction history, placing and managing orders, querying instruments, and related operations—with **consistent, schema-based inputs and outputs**, **authentication and error mapping**, and **rate-limit handling**.
 
 ## Features
 
@@ -29,7 +29,7 @@ Supports both **Demo** (paper trading) and **Live** (real money) Trading 212 env
 /plugin install trading212-api
 ```
 
-### Clawdbot / Moltbot
+### OpenClaw / Moltbot / Clawdbot
 
 ```bash
 clawdbot plugins install github:trading212-labs/agent-skills
