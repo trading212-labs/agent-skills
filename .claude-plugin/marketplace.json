@@ -10,8 +10,11 @@
     {
       "name": "trading212-api",
       "source": "./plugins/trading212-api",
+      "repository": "https://github.com/trading212-labs/agent-skills",
       "description": "Adds skill to use Trading 212 API",
-      "category": "trading"
+      "category": "trading",
+      "license": "MIT",
+      "keywords": ["trading", "portfolio", "orders", "stocks"]
     }
   ]
 }
