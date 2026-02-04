@@ -24,7 +24,7 @@ Supports both **Demo** (paper trading) and **Live** (real money) Trading 212 env
 
 ### Universal via [skills.sh](https://skills.sh/trading212-labs/agent-skills/trading212-api)
 ```bash
-npx skills add https://github.com/trading212-labs/agent-skills
+npx skills add trading212-labs/agent-skills
 ```
 
 ### Claude Code
