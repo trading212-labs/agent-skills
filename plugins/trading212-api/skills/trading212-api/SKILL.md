@@ -97,7 +97,7 @@ Combine your API Key (ID) and Secret with a colon, base64 encode, and prefix wit
 **Optional:** To precompute the header from key/secret, you can set:
 
 ```bash
-export T212_AUTH_HEADER="Basic $(echo -n "$T212_API_KEY:$T212_API_SECRET" | base64)"
+export T212_AUTH_HEADER="Basic $(echo -n "$T212_API_KEY:$T212_API_SECRET" | base64 -w 0)"
 ```
 
 Otherwise, the agent builds the header from `T212_API_KEY` and `T212_API_SECRET` when making requests.
@@ -106,10 +106,10 @@ Otherwise, the agent builds the header from `T212_API_KEY` and `T212_API_SECRET`
 
 ```bash
 # Format: T212_AUTH_HEADER = "Basic " + base64(API_KEY_ID:API_SECRET)
-export T212_AUTH_HEADER="Basic $(echo -n "<YOUR_API_KEY_ID>:<YOUR_API_SECRET>" | base64)"
+export T212_AUTH_HEADER="Basic $(echo -n "<YOUR_API_KEY_ID>:<YOUR_API_SECRET>" | base64 -w 0)"
 
 # Example with sample credentials:
-export T212_AUTH_HEADER="Basic $(echo -n "35839398ZFVKUxpHzPiVsxKdOtZdaDJSrvyPF:7MOzYJlVJgxoPjdZJCEH3fO9ee7A0NzLylFFD4-3tlo" | base64)"
+export T212_AUTH_HEADER="Basic $(echo -n "35839398ZFVKUxpHzPiVsxKdOtZdaDJSrvyPF:7MOzYJlVJgxoPjdZJCEH3fO9ee7A0NzLylFFD4-3tlo" | base64 -w 0)"
 ```
 
 ### Making Requests
@@ -117,7 +117,7 @@ export T212_AUTH_HEADER="Basic $(echo -n "35839398ZFVKUxpHzPiVsxKdOtZdaDJSrvyPF:
 When making API calls, use the first option that applies (semantically: pick the credential set that matches the user's account, or the only set present):
 
 - **If `T212_AUTH_HEADER` and `T212_BASE_URL` are set:** use them in requests.
-- **Else if `T212_API_KEY` and `T212_API_SECRET` are set:** use this pair (single account). Build header as `Basic $(echo -n "$T212_API_KEY:$T212_API_SECRET" | base64)` and base URL as `https://${T212_ENV:-live}.trading212.com`. Do not guide the user to derive or merge; you do it.
+- **Else if `T212_API_KEY` and `T212_API_SECRET` are set:** use this pair (single account). Build header as `Basic $(echo -n "$T212_API_KEY:$T212_API_SECRET" | base64 -w 0)` and base URL as `https://${T212_ENV:-live}.trading212.com`. Do not guide the user to derive or merge; you do it.
 - **Else if both account-specific pairs are set** (`T212_API_KEY_INVEST`/`T212_API_SECRET_INVEST` and `T212_API_KEY_STOCKS_ISA`/`T212_API_SECRET_STOCKS_ISA`): the user must clearly specify which account to target (Invest or Stocks ISA), unless they ask for information for **all accounts**. Use the Invest pair when the user refers to Invest, and the Stocks ISA pair when the user refers to ISA/Stocks ISA. **If the user wants information for all accounts, make multiple API calls—one per account** (Invest and Stocks ISA)—and present or aggregate the results for both. **If it is not clear from context which account to use (and they did not ask for all accounts), ask for confirmation before making API calls** (e.g. "Which account should I use — Invest or Stocks ISA?"). Do not assume. Build the header from the chosen key/secret and base URL as `https://${T212_ENV:-live}.trading212.com`.
 - **Else if only the Invest pair is set** (`T212_API_KEY_INVEST` and `T212_API_SECRET_INVEST`): use this pair for requests; if the user asks about Stocks ISA, only the Invest account is configured.
 - **Else if only the Stocks ISA pair is set** (`T212_API_KEY_STOCKS_ISA` and `T212_API_SECRET_STOCKS_ISA`): use this pair for requests; if the user asks about Invest, only the Stocks ISA account is configured.
@@ -134,7 +134,7 @@ When only primary vars are set, use the inline form in the curl:
 
 ```bash
 # When only T212_API_KEY, T212_API_SECRET, T212_ENV are set:
-curl -H "Authorization: Basic $(echo -n "$T212_API_KEY:$T212_API_SECRET" | base64)" \
+curl -H "Authorization: Basic $(echo -n "$T212_API_KEY:$T212_API_SECRET" | base64 -w 0)" \
   "https://${T212_ENV:-live}.trading212.com/api/v0/equity/account/summary"
 ```
 
@@ -182,7 +182,7 @@ export T212_ENV="demo"                   # or "live" (applies to both)
 
 ```bash
 # Build auth header and base URL from T212_API_KEY, T212_API_SECRET, T212_ENV
-export T212_AUTH_HEADER="Basic $(echo -n "$T212_API_KEY:$T212_API_SECRET" | base64)"
+export T212_AUTH_HEADER="Basic $(echo -n "$T212_API_KEY:$T212_API_SECRET" | base64 -w 0)"
 export T212_BASE_URL="https://${T212_ENV:-live}.trading212.com"
 ```
 
@@ -190,11 +190,11 @@ export T212_BASE_URL="https://${T212_ENV:-live}.trading212.com"
 
 ```bash
 # For DEMO (paper trading)
-export T212_AUTH_HEADER="Basic $(echo -n "<DEMO_API_KEY_ID>:<DEMO_API_SECRET>" | base64)"
+export T212_AUTH_HEADER="Basic $(echo -n "<DEMO_API_KEY_ID>:<DEMO_API_SECRET>" | base64 -w 0)"
 export T212_BASE_URL="https://demo.trading212.com"
 
 # For LIVE (real money) - generate separate credentials in LIVE account
-# export T212_AUTH_HEADER="Basic $(echo -n "<LIVE_API_KEY_ID>:<LIVE_API_SECRET>" | base64)"
+# export T212_AUTH_HEADER="Basic $(echo -n "<LIVE_API_KEY_ID>:<LIVE_API_SECRET>" | base64 -w 0)"
 # export T212_BASE_URL="https://live.trading212.com"
 ```
 
@@ -202,10 +202,10 @@ export T212_BASE_URL="https://demo.trading212.com"
 
 ```bash
 # Demo credentials
-export T212_DEMO_AUTH_HEADER="Basic $(echo -n "<DEMO_KEY_ID>:<DEMO_SECRET>" | base64)"
+export T212_DEMO_AUTH_HEADER="Basic $(echo -n "<DEMO_KEY_ID>:<DEMO_SECRET>" | base64 -w 0)"
 
 # Live credentials
-export T212_LIVE_AUTH_HEADER="Basic $(echo -n "<LIVE_KEY_ID>:<LIVE_SECRET>" | base64)"
+export T212_LIVE_AUTH_HEADER="Basic $(echo -n "<LIVE_KEY_ID>:<LIVE_SECRET>" | base64 -w 0)"
 ```
 
 ### Common Auth Errors
